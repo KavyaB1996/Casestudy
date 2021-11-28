@@ -3,9 +3,10 @@
     margin: 0;
 }
 
-
+#heading{
+    color: white;
+}
 .d-md-block h3{
-    
    font-weight: bold;
    font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
@@ -24,12 +25,12 @@
     height: 4em;
     /* border: rgb(233, 7, 75) 2px solid; */
     margin-bottom: 1em;
-    background-color: rgb(208, 209, 228);
+    background-color:rgb(170, 105, 202); 
     font-family: fantasy;
     font: lighter;
 }
 .navbar-nav {
-    margin-left: 45em;
+    margin-left: 40em;
 }
 
 .d-flex{

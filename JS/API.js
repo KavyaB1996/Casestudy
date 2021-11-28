@@ -25,16 +25,16 @@ function ajax(){
             var mark = response[i].completed;
             if(mark == true)
             {
-                var row = `<tr class = "table-danger">
+                var row = `<tr class = "table-primary">
 							<td>${response[i].title}</td>
-                            <td ><input type="checkbox" checked disabled = "true" id = "stts" ></td>
+                            <td ><input type="checkbox" checked disabled = "true" ></td>
 					  </tr>`
 			    tbody.innerHTML += row;
 
             }
             else if(mark == false)
             {
-                var row = `<tr class = "table-danger">
+                var row = `<tr class = "table-primary">
 							<td>${response[i].title}</td>
                             <td><input type="checkbox" onchange = "myFunction()" id = "stts" ></td>
 					  </tr>`
@@ -43,6 +43,8 @@ function ajax(){
 
 
         }
+        // console.log(row);
+
 
     }
 
@@ -50,6 +52,13 @@ function ajax(){
     }
 
     
+
+    // for(i=0;i<response.length;i++)
+    // {
+    // var checkBox = document.getElementById("stts");
+    // checkBox.onchange = function() {myFunction};
+    // }
+
         //Instantiating req object
         //GET bcz we r taking only small amount of data
         //person.json --> url of server from which info to b taken
@@ -64,20 +73,32 @@ function ajax(){
 
 function myFunction(){
     
-    // Get the checkbox
-  var checkBox = document.getElementById("stts");
-  // Get the output text
-//   var text = document.getElementById("text");
+//     // Get the checkbox
 
-  // If the checkbox is checked, display the output text
-  if (checkBox.checked == true){
-    count++;
-    console.log(count);
-  }
+//     var checkBox = document.getElementById("stts");
+//     // console.log(checkBox.value);
+//   console.log(checkBox.checked);
 
-  if(count == 5)
-  {
-      alert("Congrats! 5 Tasks have been Successfully Completed");
-      count = 0;
-  }
+//   // Get the output text
+// //   var text = document.getElementById("text");
+
+//   // If the checkbox is checked, display the output text
+//   if (checkBox.checked == true){
+//     count++;
+//     console.log(count);
+//   }
+  
+
+//   if(count == 5)
+//   {
+//       alert("Congrats! 5 Tasks have been Successfully Completed");
+//       count = 0;
+//   }
+
+  var checkboxes = document.querySelectorAll('input[id="stts"]:checked');
+    if(checkboxes.length == 5)
+    {
+        alert("Congrats! 5 Tasks have been Successfully Completed");
+    }
+ 
 }
